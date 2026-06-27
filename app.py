@@ -27,8 +27,8 @@ st.sidebar.header("Configure Property Features")
 
 # Sidebar inputs
 nr_rooms = st.sidebar.slider("Number of Rooms", min_value=1.0, max_value=10.0, value=3.0, step=1.0)
-students_per_classroom = st.sidebar.slider("Students per Teacher", min_value=12.0, max_value=22.0, value=18.46, step=0.1)
-distance_to_town = st.sidebar.slider("Distance to Employment", min_value=1.0, max_value=12.0, value=3.80, step=0.1)
+students_per_classroom = st.sidebar.slider("Students per Teacher Ratio", min_value=12.0, max_value=22.0, value=18.46, step=0.1)
+distance_to_town = st.sidebar.slider("Distance to Employment Centers", min_value=1.0, max_value=12.0, value=3.80, step=0.1)
 next_to_river = st.sidebar.checkbox("Next to Charles River")
 pollution = st.sidebar.slider("Nitric Oxide Concentration", min_value=0.00, max_value=1.00, value=0.55, step=0.01)
 amount_of_poverty = st.sidebar.slider("% Lower Status Population", min_value=1.0, max_value=40.0, value=12.6, step=0.1)
