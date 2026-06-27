@@ -13,9 +13,9 @@ def load_model():
 @st.cache_data
 def get_default_features():
     return pd.DataFrame([{
-        'CRIM': 3.61, 'ZN': 11.36, 'INDUS': 11.14, 'CHAS': 0.0, 
-        'NOX': 0.55, 'RM': 6.28, 'AGE': 68.57, 'DIS': 3.80, 
-        'RAD': 9.55, 'TAX': 408.24, 'PTRATIO': 18.46, 'B': 356.67, 'LSTAT': 12.65
+        'crim': 3.61, 'zn': 11.36, 'indus': 11.14, 'chas': 0.0, 
+        'nox': 0.55, 'rm': 6.28, 'age': 68.57, 'dis': 3.80, 
+        'rad': 9.55, 'tax': 408.24, 'ptratio': 18.46, 'black': 356.67, 'LSTAT': 12.65
     }])
 
 model = load_model()
@@ -26,11 +26,11 @@ st.markdown("Adjust the specific property characteristics below to estimate its 
 st.sidebar.header("Configure Property Features")
 
 # Sidebar inputs
-nr_rooms = st.sidebar.slider("Number of Rooms (RM)", min_value=3.0, max_value=9.0, value=6.28, step=0.1)
+nr_rooms = st.sidebar.slider("Number of Rooms (RM)", min_value=1.0, max_value=10.0, value=3, step=1)
 students_per_classroom = st.sidebar.slider("Students per Teacher (PTRATIO)", min_value=12.0, max_value=22.0, value=18.46, step=0.1)
 distance_to_town = st.sidebar.slider("Distance to Employment (DIS)", min_value=1.0, max_value=12.0, value=3.80, step=0.1)
 next_to_river = st.sidebar.checkbox("Next to Charles River (CHAS)")
-pollution = st.sidebar.slider("Nitric Oxide Concentration (NOX)", min_value=0.3, max_value=0.9, value=0.55, step=0.01)
+pollution = st.sidebar.slider("Nitric Oxide Concentration (NOX)", min_value=0.0, max_value=1.0, value=0.55, step=0.01)
 amount_of_poverty = st.sidebar.slider("% Lower Status Population (LSTAT)", min_value=1.0, max_value=40.0, value=12.65, step=0.1)
 
 st.markdown("---")
@@ -59,4 +59,3 @@ if st.button("Predict Property Value", type="primary"):
             
         except Exception as e:
             st.error(f"Prediction Error. Please verify the model features. Details: {e}")
-            
