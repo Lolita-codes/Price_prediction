@@ -26,7 +26,7 @@ st.markdown("Adjust the specific property characteristics below to estimate its 
 st.sidebar.header("Configure Property Features")
 
 # Sidebar inputs
-nr_rooms = st.sidebar.slider("Number of Rooms (RM)", min_value=1.0, max_value=10.0, value=3, step=1.0)
+nr_rooms = st.sidebar.slider("Number of Rooms (RM)", min_value=1.0, max_value=10.0, value=3.0, step=1.0)
 students_per_classroom = st.sidebar.slider("Students per Teacher (PTRATIO)", min_value=12.0, max_value=22.0, value=18.46, step=0.1)
 distance_to_town = st.sidebar.slider("Distance to Employment (DIS)", min_value=1.0, max_value=12.0, value=3.80, step=0.1)
 next_to_river = st.sidebar.checkbox("Next to Charles River (CHAS)")
